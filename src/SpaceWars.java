@@ -101,7 +101,7 @@ public class SpaceWars{
      * runs the game.
      */
     private void run() {
-        while(!this.gui.isEscPressed()){
+        while(!isEscPressed()){
             moveSpaceShips();
             moveShots();
             checkCollisions();
@@ -109,7 +109,13 @@ public class SpaceWars{
             drawAllObjects();
             removeDeadShots();
             resetDeadShips();
+            postDeathCountToGUI();
         }
+    }
+
+    private boolean isEscPressed()
+    {
+        return this.gui.isEscPressed();
     }
 
     /**
