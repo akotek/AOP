@@ -1,6 +1,5 @@
 import java.awt.Image;
 
-import annotations.Loggable;
 import oop.ex2.*;
 
 /**

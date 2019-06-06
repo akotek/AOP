@@ -1,4 +1,3 @@
-import annotations.Loggable;
 import oop.ex2.GameGUI;
 import java.awt.*;
 import java.util.Random;

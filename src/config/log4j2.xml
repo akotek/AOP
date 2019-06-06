@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+    <Properties>
+        <Property name="simplePattern" value="%d{yyyy-MM-dd HH:mm:ss} %-5p %m%n"/>
+        <Property name="path" value="src\logs"/>
+    </Properties>
+    <Appenders>
+        <!--Logging to stdout config-->
+        <Console name="stdout" target="SYSTEM_OUT">
+            <PatternLayout pattern="${simplePattern}"/>
+        </Console>
+        <!--Logging to file config-->
+        <File name="audit" fileName="${path}\audit.log" append="true">
+            <PatternLayout pattern="${simplePattern}"/>
+        </File>
+        <File name="game" fileName="${path}\game.log" append="true">
+            <PatternLayout pattern="${simplePattern}"/>
+        </File>
+    </Appenders>
+    <Loggers>
+        <!--Default logging will be to file-->
+        <Root level="ALL">
+            <AppenderRef ref="audit" level="ALL"/>
+        </Root>
+        <!--GameLogger config-->
+        <Logger name="gameLogger" level="all" additivity="false">
+            <AppenderRef ref="game" level="all"/>
+            <AppenderRef ref="stdout" level="all"/>
+        </Logger>
+    </Loggers>
+</Configuration>

@@ -1,4 +1,3 @@
-import annotations.Loggable;
 import oop.ex2.GameGUI;
 import oop.ex2.SpaceShipPhysics;
 import java.awt.*;
@@ -34,7 +33,6 @@ public class BasherShip extends SpaceShip{
      * @param game the game object to which this ship belongs.
      * @return the fitting turn value for the ship according to it's type.
      */
-    @Loggable
     public int getTurnValue(SpaceWars game){
         closestShipPhysics = game.getClosestShipTo(this).getPhysics(); // closest ship
         int turnValue = NO_TURN_VALUE;

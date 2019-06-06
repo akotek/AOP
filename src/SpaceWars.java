@@ -1,6 +1,7 @@
 
 import java.util.ArrayList;
 
+import annotations.LogType;
 import annotations.Loggable;
 import oop.ex2.*;
 
@@ -76,6 +77,7 @@ public class SpaceWars{
      * @param args the command line arguments.
      * @return the array of spaceships.
      */
+    @Loggable(LogType.DEBUG)
     private SpaceShip[] createSpaceShips(String[] args) {
         return SpaceShipFactory.createSpaceShips(args);
     }
@@ -100,6 +102,7 @@ public class SpaceWars{
     /**
      * runs the game.
      */
+    @Loggable(LogType.DEBUG)
     private void run() {
         while(!isEscPressed()){
             moveSpaceShips();

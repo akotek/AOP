@@ -9,13 +9,6 @@ import java.lang.annotation.Target;
 @Target({ElementType.METHOD})
 public @interface Loggable {
 
-    // Levels of logging
-    int INFO = 0;
-
-    int WARNING = 1;
-
-    int SEVERE = 2;
-
     // Defines level of logging... @Loggable(value = INFO)
-    int value() default Loggable.INFO;
+    LogType value() default LogType.INFO;
 }

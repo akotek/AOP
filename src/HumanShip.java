@@ -1,4 +1,3 @@
-import annotations.Loggable;
 import oop.ex2.*;
 
 import java.awt.*;
