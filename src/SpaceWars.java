@@ -77,7 +77,7 @@ public class SpaceWars{
      * @param args the command line arguments.
      * @return the array of spaceships.
      */
-    @Loggable(LogType.DEBUG)
+    @Loggable(LogType.INFO)
     private SpaceShip[] createSpaceShips(String[] args) {
         return SpaceShipFactory.createSpaceShips(args);
     }
