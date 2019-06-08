@@ -53,7 +53,7 @@ public class GameLoggingAspect {
     public void logMethod(JoinPoint jp){
 
         // Determine which logging type was defined
-        // Using java's reflections:
+        // Using java's reflection:
 
         MethodSignature signature = (MethodSignature) jp.getSignature();
         Method method = signature.getMethod();

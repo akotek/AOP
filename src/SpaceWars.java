@@ -3,6 +3,7 @@ import java.util.ArrayList;
 
 import annotations.LogType;
 import annotations.Loggable;
+import exceptions.KeyboardException;
 import oop.ex2.*;
 
 /**
@@ -114,6 +115,8 @@ public class SpaceWars{
             resetDeadShips();
             postDeathCountToGUI();
         }
+        // Uncomment this to show ExceptionTranslationAspect
+        //throw new KeyboardException("Escape pressed on keyboard exception executed");
     }
 
     private boolean isEscPressed()
