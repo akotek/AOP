@@ -40,7 +40,7 @@ public class GameLoggingAspect {
         if (retVal) {
             time = System.nanoTime() - time;
             double timeInSec = (double) time / 1000000000;
-            gameLogger.info("The game took: {} seconds", timeInSec);
+            gameLogger.info("The game took: {} seconds", Math.round(timeInSec));
             gameLogger.info("The total amount of shoots: {}", totalShoots);
             gameLogger.info("The total amount of collisions: {}", totalCollisions / 2);
         }
