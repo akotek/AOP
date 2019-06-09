@@ -16,13 +16,21 @@
         <File name="game" fileName="${path}\game.log" append="true">
             <PatternLayout pattern="${simplePattern}"/>
         </File>
+        <File name="exceptions" fileName="${path}\exceptions.log" append="true">
+            <PatternLayout pattern="${simplePattern}"/>
+        </File>
     </Appenders>
     <Loggers>
         <!--Default logging will be to file-->
         <Root level="ALL">
             <AppenderRef ref="audit" level="ALL"/>
         </Root>
-        <!--GameLogger config-->
+        <!--Exception logger config-->
+        <Logger name="exceptionLogger" level="all" additivity="false">
+            <AppenderRef ref="exceptions" level="all"/>
+            <AppenderRef ref="stdout" level="all"/>
+        </Logger>
+        <!--Game logger config-->
         <Logger name="gameLogger" level="all" additivity="false">
             <AppenderRef ref="game" level="all"/>
             <AppenderRef ref="stdout" level="all"/>
