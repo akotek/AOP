@@ -9,7 +9,7 @@ import org.aspectj.lang.annotation.Pointcut;
 import javax.swing.*;
 
 @Aspect
-public class AutorizationAspect {
+public class AuthorizationAspect {
 
     @Pointcut("execution(void SpaceWars.main(..))")
     public void AuthenticationEvents() {}
@@ -53,6 +53,4 @@ public class AutorizationAspect {
         panel.add(pass);
         return panel;
     }
-
-
 }

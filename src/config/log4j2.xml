@@ -25,6 +25,10 @@
         <Root level="ALL">
             <AppenderRef ref="audit" level="ALL"/>
         </Root>
+        <!--Stdout logger config-->
+        <Logger name="stdoutLogger" level="all" additivity="false">
+            <AppenderRef ref="stdout" level="all"/>
+        </Logger>
         <!--Exception logger config-->
         <Logger name="exceptionLogger" level="all" additivity="false">
             <AppenderRef ref="exceptions" level="all"/>
