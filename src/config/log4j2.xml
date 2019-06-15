@@ -23,11 +23,15 @@
     <Loggers>
         <!--Default logging will be to file-->
         <Root level="ALL">
-            <AppenderRef ref="audit" level="ALL"/>
+            <AppenderRef ref="stdout" level="ALL"/>
         </Root>
         <!--Stdout logger config-->
         <Logger name="stdoutLogger" level="all" additivity="false">
             <AppenderRef ref="stdout" level="all"/>
+        </Logger>
+        <!--Audit logger config-->
+        <Logger name="auditLogger" level="all" additivity="false">
+            <AppenderRef ref="audit" level="all"/>
         </Logger>
         <!--Exception logger config-->
         <Logger name="exceptionLogger" level="all" additivity="false">

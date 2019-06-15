@@ -10,7 +10,7 @@ import org.aspectj.lang.annotation.Pointcut;
 @Aspect
 public class AuditAspect {
 
-    private static Logger logger = LogManager.getLogger(AuditAspect.class);
+    private static Logger logger = LogManager.getLogger("auditLogger");
 
     @Pointcut("execution(void Action.do*(..)) " + "|| execution(* SpaceShip.get*(..))")
     public void auditEvents(){}
