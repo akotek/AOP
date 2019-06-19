@@ -34,20 +34,16 @@ public class UIAspect {
     @AfterReturning(pointcut = "execution(boolean SpaceShip.isDead())", returning = "retVal")
     public void isBangAnnotationNeedToDisplay(boolean retVal)
     {
-        if (!displayModeBang)
-        {
-            displayBang = retVal;
-        }
+
+        displayBang = retVal;
 
     }
 
     @AfterReturning(pointcut = "execution(boolean SpaceShip.teleport())", returning = "retVal")
     public void isTeleportAnnotationNeedToDisplay(boolean retVal)
     {
-        if (!displayModeTeleport)
-        {
-            displayTeleport = retVal;
-        }
+
+        displayTeleport = retVal;
     }
 
 
