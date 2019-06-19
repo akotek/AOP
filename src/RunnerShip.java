@@ -36,7 +36,7 @@ public class RunnerShip extends SpaceShip{
      * Operates spaceship teleportation.
      * @param game the game object to which this ship belongs.
      */
-    public void doTeleport(SpaceWars game){
+    public boolean doTeleport(SpaceWars game){
         /* closest ship SpaceShipPhysics object */
         closestShipPhysics = game.getClosestShipTo(this).getPhysics();
 
@@ -44,7 +44,9 @@ public class RunnerShip extends SpaceShip{
                 getPhysics().distanceFrom(closestShipPhysics) < THREATENED_DISTANCE){
             teleport(); // teleports the ship if it feels threatened
             closestShipPhysics = game.getClosestShipTo(this).getPhysics(); // update closest ship
+            return true;
         }
+        return false;
     }
 
     /**

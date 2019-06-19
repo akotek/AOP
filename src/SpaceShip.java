@@ -121,7 +121,7 @@ public abstract class SpaceShip implements Action{
      * Operates spaceship teleportation.
      * @param game the game object to which this ship belongs.
      */
-    public void doTeleport(SpaceWars game){}
+    public boolean doTeleport(SpaceWars game){return false; }
 
     /**
      * Operates spaceship shield activation.
@@ -259,11 +259,13 @@ public abstract class SpaceShip implements Action{
     /**
      * Attempts to teleport.
      */
-    public void teleport() {
+    public boolean teleport() {
         if(isThereEnoughEnergy(currentEnergyLevel, TELEPORTING_COST)) {
             this.physics = new SpaceShipPhysics(); // initialize a new SpaceShipPhysics object
             currentEnergyLevel -= TELEPORTING_COST;
+            return true;
         }
+        return false;
     }
 
     /*

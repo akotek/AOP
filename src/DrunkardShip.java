@@ -45,9 +45,10 @@ public class DrunkardShip extends SpaceShip implements Action{
      * Operates spaceship teleportation.
      * @param game the game object to which this ship belongs.
      */
-    public void doTeleport(SpaceWars game){
-        if(getRandomBoolean())
-            teleport();
+    public boolean doTeleport(SpaceWars game){
+//        if(getRandomBoolean())
+//            return teleport();
+        return false;
     }
 
     /**

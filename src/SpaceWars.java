@@ -1,4 +1,5 @@
 
+import java.awt.*;
 import java.util.ArrayList;
 
 import annotations.LogType;
@@ -110,7 +111,7 @@ public class SpaceWars{
             moveShots();
             checkCollisions();
             checkHits();
-            drawAllObjects();
+            drawAllObjects(null, null);
             removeDeadShots();
             resetDeadShips();
             postDeathCountToGUI();
@@ -199,13 +200,22 @@ public class SpaceWars{
     /**
      * Draws all spaceships and shots on the GUI.
      */
-    private void drawAllObjects() {
+    public void drawAllObjects(ArrayList<Image> annotations, ArrayList<Physics> physicsAnnottions) {
         for(int i=0; i<this.ships.length; i++){
             this.gui.addImageToBuffer(this.ships[i].getImage(), this.ships[i].getPhysics());
         }
         for(int i=this.shots.size()-1; i>=0; i--){
             this.gui.addImageToBuffer(GameGUI.SHOT_IMAGE, this.shots.get(i));
         }
+
+        if (annotations != null && physicsAnnottions != null && annotations.size() == physicsAnnottions.size())
+        {
+            for (int i=0; i<annotations.size(); i++)
+            {
+                this.gui.addImageToBuffer(annotations.get(i), physicsAnnottions.get(i));
+            }
+        }
+
         this.gui.drawBufferToScreen();
     }
 

@@ -26,9 +26,10 @@ public class HumanShip extends SpaceShip{
      * Operates spaceship teleportation.
      * @param game the game object to which this ship belongs.
      */
-    public void doTeleport(SpaceWars game){
+    public boolean doTeleport(SpaceWars game){
         if(game.getGUI().isTeleportPressed())
-            teleport();
+            return teleport();
+        return false;
     }
 
     /**
