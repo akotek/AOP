@@ -14,7 +14,7 @@ import java.util.ArrayList;
 @Aspect
 public class UIAspect {
 
-    private BangPhysics test = new BangPhysics();
+    private BangPhysics UIPhysics = new BangPhysics();
 
     private boolean displayBang = false;
 
@@ -27,8 +27,6 @@ public class UIAspect {
     private boolean displayModeTeleport = false;
 
     private int counterTeleport = 0;
-
-    private boolean firstTime = true;
     
 
     @AfterReturning(pointcut = "execution(boolean SpaceShip.isDead())", returning = "retVal")
@@ -61,7 +59,7 @@ public class UIAspect {
         if ((displayBang && !displayModeBang) || (displayModeBang && counterBang < 50))
         {
             annotations.add(GameGUI.BANG_IMAGE);
-            physics.add(test);
+            physics.add(UIPhysics);
 
             displayModeBang = true;
 
@@ -76,7 +74,7 @@ public class UIAspect {
         if((displayTeleport && !displayModeTeleport) || (displayModeTeleport && counterTeleport < 50))
         {
             annotations.add(GameGUI.TELEPORT_IMAGE);
-            physics.add(test);
+            physics.add(UIPhysics);
 
             displayModeTeleport = true;
 
