@@ -11,7 +11,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Aspect
-public class DesignPatternsAspect {
+public class SingletonAspect {
 
     private static Logger logger = LogManager.getLogger("stdoutLogger");
 
