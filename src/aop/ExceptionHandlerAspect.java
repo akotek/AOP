@@ -1,6 +1,5 @@
 package aop;
 
-import exceptions.KeyboardException;
 import org.aspectj.lang.JoinPoint;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -18,7 +17,7 @@ public class ExceptionHandlerAspect {
     public void UnhandledExceptionScope() {}
 
     @AfterThrowing(value="UnhandledExceptionScope()", throwing="t")
-    public void handleException(JoinPoint jp, KeyboardException t) {
+    public void handleException(JoinPoint jp, Throwable t) {
 
         // Intercept unhandled exceptions in application,
         // Log it and throw generic UnhandledException(msg)

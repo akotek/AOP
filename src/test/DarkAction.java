@@ -1,6 +1,6 @@
 package test;
 
-public interface DarkPlayerActions {
+public interface DarkAction {
 
     public void doSomeBadStuff();
 }

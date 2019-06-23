@@ -12,7 +12,7 @@ public class SerializableTest {
         SomeClass s1 = new SomeClass();
         SomeSingletonClass s2 = new SomeSingletonClass();
 
-        Assertions.assertTrue(s1 instanceof Serializable && s1 instanceof DarkPlayerActions);
-        Assertions.assertTrue(s2 instanceof Serializable && s2 instanceof DarkPlayerActions);
+        Assertions.assertTrue(s1 instanceof Serializable && s1 instanceof DarkAction);
+        Assertions.assertTrue(s2 instanceof Serializable && s2 instanceof DarkAction);
     }
 }
